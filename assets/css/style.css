@@ -1,0 +1,114 @@
+/*样式重置开始*/
+*{
+    margin:0;
+    padding:0;
+}
+ul,ol{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+img{
+    border:0;
+}
+/*样式重置结束*/
+.wrapper{
+    height:100%;
+    width:1170px;
+    margin:0 auto;
+    position:relative
+}
+html,body{
+    height:100%;
+    width:100%;
+    font-family: 'Arimo', sans-serif;
+    font-size:16px;
+}
+#header{
+    background:url("../image/banner33.jpg")  no-repeat 0;
+    background-size:cover;
+    height:720px;
+    width:100%;
+}
+#top{
+    height:100px;
+    width:100%;
+    line-height:100px;
+
+}
+#login{
+    float:left;
+    color:white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 8px;
+}
+#shop_cart{
+    position:absolute;
+    top:50%;
+    right:0;
+    height:42px;
+    width:269px;
+    background:rgba(55, 55, 55, 1) url(../image/cart.png)
+    no-repeat 80%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+#shop_cart>a{
+        display:block;
+        width:100%;
+        height:100%;
+        line-height:42px;
+        margin-left:20px;
+}
+#h_title{
+    width:100%;
+    text-align: center;
+}
+#h_title>a{
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+#nav{
+    display: flex;
+    height:39px;
+}
+#nav>li{
+    background:#fa558f;
+}
+#nav>li:last-child{
+    flex:1;
+}
+#nav>li.active{
+    background: #3C3B3B;
+}
+#nav>li:hover{
+
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+#nav>li>a{
+    float: left;
+    padding: 8px 63.1px;
+
+}
+#nav>li>a:last-child{
+
+}
+@keyframes fadeIn {
+    from{
+        background:#fa558f;
+        opacity: 1;
+    }to{background: #3C3B3B;
+         opacity:1;
+         }
+}
