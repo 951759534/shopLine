@@ -19,6 +19,7 @@ $(
         };
 
         var products = {
+            page:1,
             loadFlag:true,
             render:function(){
               $("#c_sum").html(Cart.Sum);
@@ -26,7 +27,7 @@ $(
             },
             $content:$('#c_content'),
             init:function(){
-                this.loadData();
+                this.loadData(this.loaded);
                 $("#c_content").on("click",'.product_add',function(){
                         Cart.Add($(this).parents(".product_item").data("product"));
                         products.render();
@@ -35,17 +36,22 @@ $(
                     products.loadMore();
                 });
             },
-            loadData:function(){
-                    $.get('../../assets/js/product.json',function(data){
-                        for(var i=0;i<data.length;i++){
-                            var product = new Product(data[i]);
-                            var $li = $(template("product",product)).data('product',product);
-                                        this.$content.append($li);
-                        }
-                        $("#c_loading").hide();
-                        $("#c_loadMore").show();
-                        this.loadFlag = true;
-                    }.bind(this));
+            loadData:function(callback){
+                        $.get('shop/getProducts?page='+this.page,function(data){
+                            this.loadFlag = true;
+                            callback&&callback();
+                            data = JSON.parse(data);
+                            if(data.isEnd){
+                                alert("is End");
+                                return;
+                            }
+                            this.page++;
+                            for(var i=0;i<data.product.length;i++){
+                                var product = new Product(data.product[i]);
+                                var $li = $(template("product",product)).data('product',product);
+                                this.$content.append($li);
+                            }
+                        }.bind(this));
             },
             loadMore:function(){
                 if(this.loadFlag){
@@ -53,10 +59,13 @@ $(
                     $("#c_loadMore").hide();
                     this.loadFlag = false;
                     setTimeout(()=>{
-                        this.loadData();
+                        this.loadData(this.loaded);
                 },1000);
                 }
-
+            },
+            loaded:function(){
+                $("#c_loading").hide();
+                $("#c_loadMore").show();
             }
         };
         products.init();

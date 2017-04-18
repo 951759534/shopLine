@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="<?php echo site_url(); ?>">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>shopIndex</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div id="header">
@@ -183,7 +184,7 @@
             <div id="c_loadMore">加载更多</div>
         </div>
     </div>
-    <script src="../../assets/js/artTemplate.js"></script>
+    <script src="assets/js/artTemplate.js"></script>
     <script type="text/html" id="product">
         <li class="product_item">
             <img src="{{img_src}}" alt="">
@@ -197,7 +198,7 @@
             </div>
         </li>
     </script>
-    <script src="../../assets/js/jquery.js"></script>
-    <script src="../../assets/js/index.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
