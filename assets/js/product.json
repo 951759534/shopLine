@@ -1,0 +1,35 @@
+[
+  {
+    "prod_id":1,
+    "prod_name":"BELLE B&W",
+    "prod_price":187.95,
+    "img_src":"../../assets/image/product/ab1.jpg"
+  },
+  {
+    "prod_id":2,
+    "prod_name":"BELLE B&W",
+    "prod_price":200,
+    "img_src":"../../assets/image/product/ab2.jpg"
+  },
+  {
+    "prod_id":3,
+    "prod_name":"BELLE B&W",
+    "prod_price":220,
+    "img_src":"../../assets/image/product/ab3.jpg"
+  }, {
+  "prod_id":4,
+  "prod_name":"BELLE B&W",
+  "prod_price":290,
+  "img_src":"../../assets/image/product/ab4.jpg"
+}, {
+  "prod_id":5,
+  "prod_name":"BELLE B&W",
+  "prod_price":300,
+  "img_src":"../../assets/image/product/ab5.jpg"
+}, {
+  "prod_id":6,
+  "prod_name":"BELLE B&W",
+  "prod_price":320,
+  "img_src":"../../assets/image/product/ab6.jpg"
+}
+]

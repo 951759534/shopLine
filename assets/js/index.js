@@ -1,11 +1,79 @@
 /**
  * Created by K550jk on 2017/4/15.
  */
-window.onload = function(){
-    var oBanner = document.getElementById("banner");
+$(
+    function(){
+        var cart_list = [];
+        var Cart = {
+            cart_list:[],
+            AllPrice:0,
+            Sum:0,
+            Add:function(obj){
+                cart_list.push(obj);
+               this.AllPrice +=obj.count*obj.prod_price;
+                this.Sum += obj.count;
+            },
+            Remove:function(){
 
+            }
+        };
 
+        var products = {
+            loadFlag:true,
+            render:function(){
+              $("#c_sum").html(Cart.Sum);
+              $("#c_total").html(Cart.AllPrice);
+            },
+            $content:$('#c_content'),
+            init:function(){
+                this.loadData();
+                $("#c_content").on("click",'.product_add',function(){
+                        Cart.Add($(this).parents(".product_item").data("product"));
+                        products.render();
+                });
+                $("#c_loadMore").on("click",function(){
+                    products.loadMore();
+                });
+            },
+            loadData:function(){
+                    $.get('../../assets/js/product.json',function(data){
+                        for(var i=0;i<data.length;i++){
+                            var product = new Product(data[i]);
+                            var $li = $(template("product",product)).data('product',product);
+                                        this.$content.append($li);
+                        }
+                        $("#c_loading").hide();
+                        $("#c_loadMore").show();
+                        this.loadFlag = true;
+                    }.bind(this));
+            },
+            loadMore:function(){
+                if(this.loadFlag){
+                    $("#c_loading").show();
+                    $("#c_loadMore").hide();
+                    this.loadFlag = false;
+                    setTimeout(()=>{
+                        this.loadData();
+                },1000);
+                }
 
-
-
-};
+            }
+        };
+        products.init();
+        function Product(obj){
+            var deafaultConfig =  {
+                "prod_id":'',
+                "prod_name":"",
+                "prod_price":'',
+                "img_src":'',
+                'count':1
+            };
+            $.extend(deafaultConfig,obj);
+            this.product_id = deafaultConfig.prod_id;
+            this.prod_name=deafaultConfig.prod_name;
+            this.prod_price=deafaultConfig.prod_price;
+            this.img_src=deafaultConfig.img_src;
+            this.count =deafaultConfig.count
+        }
+    }
+);
