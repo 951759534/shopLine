@@ -12,7 +12,7 @@
         <div id="top">
                  <div class="wrapper">
                  <a href="#" id="login">LOGIN</a>
-                 <div id="shop_cart"><a href="#">Cart: <span>$ 0.0</span>(<span>0</span>   items ) </a>
+                 <div id="shop_cart"><a href="#">Cart: <span id="c_total">$ 0.0</span>(<span id="c_sum">0</span>   items ) </a>
                  </div>
                  <div id="h_title">
                      <a href="#">NEW FASHIONS</a>
@@ -178,24 +178,26 @@
                 <li>new Arrivals</li>
             </ul>
             <ul id="c_content">
-                <li>
-                    <img src="../../assets/image/ab1.jpg" alt="">
-                    <div class="c_footer">
-                        <div class="c_price">
-                            <h5>BELLE B&W</h5>
-                            <p>$187.95</p>
-                            <div><input type="text" /></div>
-                            <button>add</button>
-                        </div>
-                    </div>
-                </li>
-                <li><img src="../../assets/image/ab1.jpg" alt=""> <div class="c_footer"></div></li>
-                <li><img src="../../assets/image/ab1.jpg" alt=""> <div class="c_footer"></div></li>
-                <li><img src="../../assets/image/ab1.jpg" alt=""> <div class="c_footer"></div></li>
-                <li><img src="../../assets/image/ab1.jpg" alt=""> <div class="c_footer"></div></li>
-                <li><img src="../../assets/image/ab1.jpg" alt=""><div class="c_footer"></div></li>
             </ul>
+            <div id = "c_loading"></div>
+            <div id="c_loadMore">加载更多</div>
         </div>
     </div>
+    <script src="../../assets/js/artTemplate.js"></script>
+    <script type="text/html" id="product">
+        <li class="product_item">
+            <img src="{{img_src}}" alt="">
+            <div class="c_footer">
+                <div class="c_price">
+                    <h5>{{prod_name}}</h5>
+                    <p>${{prod_price}}</p>
+                    <div><input type="text" value="{{count}}"/></div>
+                    <button class="product_add">add</button>
+                </div>
+            </div>
+        </li>
+    </script>
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/index.js"></script>
 </body>
 </html>
