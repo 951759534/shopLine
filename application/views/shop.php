@@ -22,7 +22,7 @@
         </div>
         <ul id="nav" class="wrapper">
             <li class="active"><a href="javascript:;">HOME</a></li>
-            <li><a href="#">WOMEN</a>
+            <li><a href="#">女士</a>
                 <ul class="n_sub_menu">
                     <li><h5 class="n_sub_menu_header">SHOP</h5>
                         <div class="n_last_menu"><a href="">New Arrivals</a></div>
@@ -64,7 +64,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="#">MEN</a>
+            <li><a href="#">男士</a>
                 <ul class="n_sub_menu">
                     <li><h5 class="n_sub_menu_header">SHOP</h5>
                         <div class="n_last_menu"><a href="">New Arrivals</a></div>
@@ -105,9 +105,9 @@
                         <div class="n_last_menu"><a href=""></a></div>
                     </li>
                 </ul></li>
-            <li><a href="#">ABOUT US</a></li>
-            <li><a href="#">BLOG</a></li>
-            <li><a href="#">SHOP ONLINE</a>
+            <li><a href="#">潮人推荐</a></li>
+            <li><a href="#">博客</a></li>
+            <li><a href="#">关于我们</a>
                 <ul class="n_sub_menu">
                     <li><h5 class="n_sub_menu_header">SHOP</h5>
                         <div class="n_last_menu"><a href="">New Arrivals</a></div>
@@ -182,6 +182,57 @@
             </ul>
             <div id = "c_loading"></div>
             <div id="c_loadMore">加载更多</div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="wrapper">
+            <div class="f_left">
+                <ul class="f_l_h">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Combos</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Trendy</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Top Seller</a></li>
+                    <li><a href="#">College</a></li>
+                    <li><a href="#">New Models</a></li>
+                    <li><a href="#">Party</a></li>
+                    <li><a href="#">Combos</a></li>
+                    <li><a href="#">Dress</a></li>
+                    <li><a href="#">Collection</a></li>
+                    <li><a href="#">Kurtas & kurtis</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="f_l_b">
+                    <li class="f_l_b_d">
+                        follow us
+                    </li>
+                    <li>
+                        <ul class="f_l_b_c">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="f_right">
+                <ul class="f_r">
+                    <li class="f_r_t">
+                        <span><input type="text" name="name" placeholder="Name.."></span>
+                        <span><input type="text" name="email" placeholder="Email.."></span>
+                    </li>
+                    <li class="f_r_c">
+                        <textarea name="message" placeholder="Message.."></textarea>
+                    </li>
+                    <li class="f_r_b">
+                        <button>Submit</button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <script src="assets/js/artTemplate.js"></script>

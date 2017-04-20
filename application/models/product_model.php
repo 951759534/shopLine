@@ -14,6 +14,7 @@ class Product_model extends CI_Model{
         $this->db->from('t_product');
         $this->db->join('t_product_img',
             't_product.prod_id = t_product_img.prod_id');
+        $this->db->where("t_product_img.is_main",1);
         $this -> db -> limit($per,$offset);
         return $this->db->get()->result();
     }
