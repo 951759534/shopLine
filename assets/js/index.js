@@ -41,7 +41,7 @@ $(
             }
             var products = {
                 page:1,
-                loadFlag:true,
+                loadingFlag:true,
                 render:function(){
                     $("#c_sum").html(Cart.Sum);
                     $("#c_total").html(Cart.AllPrice);
@@ -58,40 +58,70 @@ $(
                     });
                 },
                 loadData:function(callback){
-                    $.get('shop/getProducts?page='+this.page,function(data){
-                        this.loadFlag = true;
+                    var getOParam = {page:this.page};
+                    getOParam = $.extend(getOParam,this.loadObj);
+                    console.log(getOParam);
+                    $.get('shop/getProducts',getOParam,function(data){
+                        this.loadingFlag = true;
                         callback&&callback();
                         data = JSON.parse(data);
-                        if(data.isEnd){
-                            alert("is End");
-                            return;
-                        }
                         this.page++;
                         for(var i=0;i<data.product.length;i++){
                             var product = new Product(data.product[i]);
                             var $li = $(template("product",product)).data('product',product);
                             this.$content.append($li);
                         }
+                        if(data.isEnd){
+
+                            this.end();
+                        }
                     }.bind(this));
                 },
                 loadMore:function(){
-                    if(this.loadFlag){
-                        $("#c_loading").show();
-                        $("#c_loadMore").hide();
-                        this.loadFlag = false;
-                        setTimeout(()=>{
-                            this.loadData(this.loaded);
-                    },1000);
+                    if(this.loadingFlag){
+                            $("#c_loading").show();
+                            $("#c_loadMore").hide();
+                            this.loadingFlag = false;
+                            setTimeout(()=>{
+                                this.loadData(this.loaded);
+                        },1000);
                     }
                 },
                 loaded:function(){
                     $("#c_loading").hide();
                     $("#c_loadMore").show();
+                },
+                clear:function(){
+                    this.page = 1;
+                    this.$content.empty();
+                    $("#c_load_end").hide();
+                },
+                end:function() {
+                    $("#c_loading").hide();
+                    $("#c_loadMore").hide();
+                    $IsEnd = $("<div id='c_load_end'>没有更多了...</div>");
+                    console.log($IsEnd);
+                    $("#c_loading").after($IsEnd);
                 }
             };
             return products;
 
         })();
         products.init();
+       var nav = (function(){
+            var nav = {
+            init:function(){
+                $("#nav>li>a").each(function(index,elem){
+                    $(this).on("click",function(){
+                        products.loadObj =$(this).data();
+                        products.clear();
+                        products.loadData();
+                    })
+                })
+            }
+            };
+            return nav;
+        })();
+      nav.init();
     }
 );

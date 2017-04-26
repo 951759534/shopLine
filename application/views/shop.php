@@ -21,8 +21,8 @@
                  </div>
         </div>
         <ul id="nav" class="wrapper">
-            <li class="active"><a href="javascript:;">HOME</a></li>
-            <li><a href="#">女士</a>
+            <li class="active"><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;" data-cate_id = "1">男士</a>
                 <ul class="n_sub_menu">
                     <li><h5 class="n_sub_menu_header">SHOP</h5>
                         <div class="n_last_menu"><a href="">New Arrivals</a></div>
@@ -64,7 +64,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="#">男士</a>
+            <li><a href="javascript:;" data-cate_id="2">女士</a>
                 <ul class="n_sub_menu">
                     <li><h5 class="n_sub_menu_header">SHOP</h5>
                         <div class="n_last_menu"><a href="">New Arrivals</a></div>
@@ -105,9 +105,9 @@
                         <div class="n_last_menu"><a href=""></a></div>
                     </li>
                 </ul></li>
-            <li><a href="#">潮人推荐</a></li>
-            <li><a href="#">博客</a></li>
-            <li><a href="#">关于我们</a>
+            <li><a href="javascript:;" data-tag_id ="1">潮人推荐</a></li>
+            <li><a href="javascript:;">博客</a></li>
+            <li><a href="javascript:;">关于我们</a>
                 <ul class="n_sub_menu">
                     <li><h5 class="n_sub_menu_header">SHOP</h5>
                         <div class="n_last_menu"><a href="">New Arrivals</a></div>
@@ -158,7 +158,7 @@
                 </div>
         </div>
     </div>
-   <div id="banner">
+    <div id="banner">
        <div class="wrapper">
            <div>
                <a href=""><div class="b_sub"><h5>Fashion</h5><div>dignissim</div></div></a>
