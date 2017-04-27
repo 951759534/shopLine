@@ -20,7 +20,7 @@ class Shop extends CI_Controller {
         $Allpage = ceil($count/$per); /*总共的页数*/
         $result = $this ->product_model ->getProductLimit(($page-1)*$per,$per,$searchParam);
         $data = Array(
-            'product'=>$result
+            'products'=>$result
         );
         if($page >= $Allpage){
             $data['isEnd'] =  true;
@@ -28,5 +28,8 @@ class Shop extends CI_Controller {
             $data['isEnd'] =  false;
         }
         echo json_encode($data);
+    }
+    public function single(){
+        $this->load->view("single");
     }
 }

@@ -6,6 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>shopIndex</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -235,6 +236,7 @@
             </div>
         </div>
     </div>
+    <?php include"login.php" ?>
     <script src="assets/js/artTemplate.js"></script>
     <script type="text/html" id="product">
         <li class="product_item">
@@ -250,6 +252,9 @@
         </li>
     </script>
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/user.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
 </html>
