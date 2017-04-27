@@ -50,8 +50,14 @@ $(
                 init:function(){
                     this.loadData(this.loaded);
                     $("#c_content").on("click",'.product_add',function(){
-                        Cart.Add($(this).parents(".product_item").data("product"));
-                        products.render();
+                        var _this = this;
+                        user.checkLogin(function(){
+                            Cart.Add($(_this)
+                                .parents(".product_item")
+                                .data("product"));
+                            products.render();    //必须放在回调函数中
+                        },login.open);
+
                     });
                     $("#c_loadMore").on("click",function(){
                         products.loadMore();
@@ -60,19 +66,18 @@ $(
                 loadData:function(callback){
                     var getOParam = {page:this.page};
                     getOParam = $.extend(getOParam,this.loadObj);
-                    console.log(getOParam);
+                   // console.log(getOParam);
                     $.get('shop/getProducts',getOParam,function(data){
                         this.loadingFlag = true;
                         callback&&callback();
                         data = JSON.parse(data);
                         this.page++;
-                        for(var i=0;i<data.product.length;i++){
-                            var product = new Product(data.product[i]);
+                        for(var i=0;i<data.products.length;i++){
+                            var product = new Product(data.products[i]);
                             var $li = $(template("product",product)).data('product',product);
                             this.$content.append($li);
                         }
                         if(data.isEnd){
-
                             this.end();
                         }
                     }.bind(this));
@@ -90,6 +95,7 @@ $(
                 loaded:function(){
                     $("#c_loading").hide();
                     $("#c_loadMore").show();
+
                 },
                 clear:function(){
                     this.page = 1;
@@ -116,6 +122,7 @@ $(
                         products.loadObj =$(this).data();
                         products.clear();
                         products.loadData();
+                        $("body").animate({scrollTop:910},1000);
                     })
                 })
             }

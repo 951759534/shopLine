@@ -29,7 +29,7 @@ html,body{
 }
 /*header开始*/
 #header{
-    background:url("../image/banner33.jpg")  no-repeat 0;
+    background:url("../images/banner33.jpg")  no-repeat 0;
     background-size:100% 100%;
     height:720px;
     width:100%;
@@ -54,7 +54,7 @@ html,body{
     right:0;
     height:42px;
     width:269px;
-    background:rgba(55, 55, 55, 1) url(../image/cart.png)
+    background:rgba(55, 55, 55, 1) url(../images/cart.png)
     no-repeat 80%;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -197,7 +197,7 @@ html,body{
 }
 #banner>.wrapper>div{
     flex: 1;
-    background: url("../../assets/image/bg1.jpg") no-repeat;
+    background: url("../images/bg1.jpg") no-repeat;
     margin-right:25px;
 
 }
@@ -274,7 +274,7 @@ html,body{
     border: 1px solid #E7E7E7;
 }
 #c_content>li>.c_footer{
-    height: 170px;
+    height:200px;
     background: #eaeaea;
     width:100%;
     margin-top:-5px;
@@ -326,7 +326,7 @@ html,body{
 #c_loading{
     width: 100%;
     height:100px;
-    background:url("../../assets/image/loading.gif") no-repeat center;
+    background:url("../images/loading.gif") no-repeat center;
 }
 #c_loadMore{
     height:50px;
@@ -344,14 +344,15 @@ html,body{
 
 }
 #contact{
-    height:330px;
-    background-image:url('../../assets/image/banner2.jpg');
+    height:500px;
+    background-image:url('../images/banner2.jpg');
     background-size:100%;
     background-repeat: no-repeat;
-    margin:20px 0;
-    padding:80px 0;
+    margin:20px 0 0 0;
+    padding:80px 0 0 0;
 }
 #contact>.wrapper>div{
+    padding:20px 0 0 0;
     float:left;
     width:50%;
     height:100%;
@@ -395,7 +396,7 @@ html,body{
     float:left;
     height:39px;
     width:39px;
-    background-image:url('../image/social.png');
+    background-image:url('../images/social.png');
     background-repeat:no-repeat;
 }
 .f_l_b_c>li:hover{
