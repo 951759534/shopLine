@@ -9,7 +9,11 @@ ul,ol{
 a{
     text-decoration: none;
     color:white;
-
+}
+a:link,a:active,a:hover,a:focus{
+    color: white;
+    cursor:pointer;
+    text-decoration: none;
 }
 img{
     border:0;
@@ -31,7 +35,7 @@ html,body{
 #header{
     background:url("../images/banner33.jpg")  no-repeat 0;
     background-size:100% 100%;
-    height:720px;
+    height:900px;
     width:100%;
     position:relative;
 }
@@ -41,7 +45,7 @@ html,body{
     line-height:100px;
 
 }
-#login{
+#t_left{
     float:left;
     color:white;
     font-size: 14px;
@@ -53,9 +57,9 @@ html,body{
     top:50%;
     right:0;
     height:42px;
-    width:269px;
+    width:300px;
     background:rgba(55, 55, 55, 1) url(../images/cart.png)
-    no-repeat 80%;
+    no-repeat 95%;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -110,7 +114,7 @@ html,body{
 }
 .n_sub_menu{
     position:absolute;
-    height:290px;
+    height:312px;
     width:100%;
     background:#ffffff;
     left:0;

@@ -4696,6 +4696,12 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .breadcrumb > li {
   display: inline-block;
 }
+.breadcrumb a{
+  color:#000000;
+}
+.breadcrumb a:hover{
+  color:#000000;
+}
 .breadcrumb > li + li:before {
   padding: 0 5px;
   color: #ccc;
